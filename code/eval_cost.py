@@ -50,7 +50,6 @@ def load_model(arch):
 def model_to_circ(model, x):
     bsz = x.shape[0]
 
-    # 加载circ，转换成qiskit的形式
     qdev = tq.QuantumDevice(n_wires=model.n_wires, bsz=bsz, device='cpu', record_op=True)
 
     # import pdb; pdb.set_trace()

@@ -33,9 +33,9 @@ if __name__ == '__main__':
             'classify_circ_list': ['model'+str(i) for i in range(1,20)], 
             'class_num': 4,
             "rotation_gate": "rz", # toward IQP encoding
-            'enc_blocks':1, 'cls_blocks':2, # 'cls_blocks' 在classify_circ中 使用
+            'enc_blocks':1, 'cls_blocks':2, 
             'encoded_states_dir_name': 'encoded_states',
-            'classify_circ': 'model6',  # 默认训练模型
+            'classify_circ': 'model6', 
             }
     arch['config_file'] = args.config
 
@@ -59,7 +59,6 @@ if __name__ == '__main__':
                         # trainable circuit
                         for classify_circ in arch['classify_circ_list']:
                             arch['classify_circ'] = classify_circ
-                            # 先重复训练每一个model
                             arch['dataset'] = dataset
                             # with open(arch['config_file_1'], "w") as f:
                             with open(arch['config_file'], "w") as f:
